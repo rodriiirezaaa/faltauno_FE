@@ -25,12 +25,11 @@ async function registrarUsuario() {
     // Objeto enviado a Java
     const nuevoUsuario = {
         nombre: nombre,
-        apellidos: apellidos, // <--- Enviamos los apellidos
+        apellidos: apellidos, 
         email: email,
         passwd: password,
         rol: "USER",
-        medVal: 0,
-        numVal: 0
+        medVal: 0
     };
 
     try {
