@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Falta Uno - Inicio</title>
+    <title>Falta Uno - Comunidad</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/global.css">
+    <style>
+        /* Layout dividido para mapa y tablón */
+        .dashboard { display: flex; gap: 20px; padding: 20px; }
+        .map-section { flex: 2; }
+        .tablon-section { flex: 1; background: #F5F5F5; padding: 15px; border-radius: 8px; }
+        .ticket { background: white; padding: 10px; margin-bottom: 10px; border-left: 5px solid #F58220; }
+        .ticket.futbol { border-left-color: #4CAF50; }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="logo">FALTA UNO</div>
         <div class="menu">
-            <a href="login.html">Iniciar Sesión</a>
-            <a href="registro.html">Registrarse</a>
+            <button onclick="abrirModalAlerta()">+ Crear Alerta</button>
+            <a href="perfil.html">Mi Perfil</a>
         </div>
     </nav>
 
-    <main class="container">
-        <h2>Canchas en Ourense</h2>
-        <div id="mapa-pistas" style="height: 500px; width: 100%; border-radius: 8px;"></div>
+    <main class="dashboard">
+        <section class="map-section">
+            <div id="mapa-inteligente" style="height: 600px; width: 100%; border-radius: 8px;"></div>
+            <button style="margin-top: 10px; background: #212121; color: white;">Proponer Nueva Cancha (Modo Radar)</button>
+        </section>
+
+        <section class="tablon-section">
+            <h3>Tablón de Partidos</h3>
+            <div id="lista-alertas">
+                </div>
+        </section>
     </main>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/inicio-v1.js"></script>
+    <script src="js/inicio-v2.js"></script>
 </body>
 </html>
